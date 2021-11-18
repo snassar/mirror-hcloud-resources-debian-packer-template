@@ -3,7 +3,7 @@ variable "hcloud_token" {
 }
 
 variable "ssh_keys" {
-  type = string
+  type = list(string)
 }
 
 locals {
@@ -25,7 +25,7 @@ source "hcloud" "debian-11" {
   ssh_username = "root"
   token        = "${var.hcloud_token}"
   rescue       = "linux64"
-  ssh_keys     = ["${var.ssh_keys}"]
+  ssh_keys     = "${var.ssh_keys}"
   ssh_agent_auth = true
   server_name = "debian-11-${ local.snapshotbuildtime }"
   snapshot_name = "debian-11-${ local.snapshotbuildtime }"
