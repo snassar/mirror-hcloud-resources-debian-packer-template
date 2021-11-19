@@ -1,16 +1,13 @@
 # debian packer template for Hetzner Cloud
 
-This repo is used to debian linux images (as snapshots) for use with
-[Hetzner Cloud](https://www.hetzner.de/cloud) by means of HashiCorp's
-[Packer](https://packer.io/).
+This repo is used to build debian images (as snapshots) for use with [Hetzner Cloud](https://www.hetzner.de/cloud) by means of HashiCorp's [Packer](https://packer.io/).
 
 ## Building Images using this Repo
 
 Please ensure that you have done the following:
 
   - installed `packer` on your development machine
-  - set the `HCLOUD_TOKEN` environment variable to your API token
-  - reviewed/overriden the templates' variables (as necessary)
+  - set the `hcloud_token` and `ssh_keys` using a `<filename>.auto.pkrvars.hcl` file
 
 ### Internals
 
